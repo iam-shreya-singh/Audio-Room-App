@@ -14,3 +14,6 @@ The folders dividing project in it's frondtend and backend:
 npm i @hookform/resolvers 
 
 yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
+
+
+Simple components added to folders under pages - main, room, sign-in -- adding index.tsx to all 3.
