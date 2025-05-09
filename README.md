@@ -1,6 +1,6 @@
 # Audio-Room-App
 **Intro:**
-A full stack project (Vite, ReactJS, NodeJs, Stream -backend handling )
+A full stack project (Vite - to build frontend , ReactJS, NodeJs, Stream -backend handling )
 To build the Frontend of App we are using Vite.
 
  
