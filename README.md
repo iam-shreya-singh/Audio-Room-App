@@ -10,5 +10,7 @@ The folders dividing project in it's frondtend and backend:
 
 **Server**: Backend side which holds mainly authentication , user login .
 
-Commands to install the non-dev dependencies :
-npm i @hookform/resolvers yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
+**Commands to install the non-dev dependencies :**
+npm i @hookform/resolvers 
+
+yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
