@@ -9,7 +9,7 @@ return (
     <Router> 
       <Routes>
         <Route path="/" element={<MainPage />}/>
-        <Route path="/sign-In" element={<SignIn />}/>
+        <Route path="/sign-In" element={<Sign-In />}/>
         <Route path="/room" element={<Room />}/>
       </Routes>
     </Router>
