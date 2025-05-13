@@ -17,3 +17,7 @@ yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
 
 
 Simple components added to folders under pages - main, room, sign-in -- adding index.tsx to all 3 components
+
+**Flow of app creation:**
+1. Rendering pages like Sign in, room, Main Page (with files index.tsx in each) through app.tsx file
+2. 
