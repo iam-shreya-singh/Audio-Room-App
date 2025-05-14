@@ -1,8 +1,14 @@
 import { useForm, SubmitHandler } from "react-router-hook";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 export const SignIn = () => {
-    const schema = yup.object().shape ({})
+    // Define Yup validation schema
+    const schema = yup.object().shape ({    
+      username: yup.string().required("Username is required").matches(/^[a-zA-Z0-9_]{3,15}$/, "Username must be 3-15 characters long and contain only letters, numbers, and underscores"),
+      name: yup.string().required("Name is required"),
+    });
+    
     return (
     <div className="sign-in"> 
     {" "}
