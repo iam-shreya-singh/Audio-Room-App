@@ -15,6 +15,10 @@ npm i @hookform/resolvers
 
 yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
 
+**Imported libraries:**
+
+Yup - import for form validation in React in file(index.tsx)sign-in
+
 
 Simple components added to folders under pages - main, room, sign-in -- adding index.tsx to all 3 components
 
