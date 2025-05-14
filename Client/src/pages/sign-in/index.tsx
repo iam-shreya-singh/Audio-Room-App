@@ -1,4 +1,4 @@
-import { useForm, SubmitHandler } from "react-router-hook";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -15,15 +15,15 @@ export const SignIn = () => {
     });
 
     const onSubmit : (SubmitHandler<FormValues>) = (data) => {
-      const {username, name} = data;
-      console.log(username, name);
+      const {Username, name} = data;
+      console.log(Username, name);
     }; 
 
     const {
       register, 
       handleSubmit,
       formState: { errors },
-    } = useForm<FormValues>({resolve: yupResolver(schema)})
+    } = useForm<FormValues>({resolver: yupResolver(schema)} );
 
     return (
     <div className="sign-in"> 
@@ -32,11 +32,13 @@ export const SignIn = () => {
     <form>
    <div onSubmit={handleSubmit(onSubmit)}>
     <label> Username: </label>
-    <input type="text" {...register("username")}/>
+    <input type="text" {...register("Username")} />
+    {errors.Username && (<p style = {{color: "red" }} > 
+    errors.Username.message </p>)}
    </div>
    <div>
     <label> Name: </label>
-    <input type="text" {...register("username")}/>
+    <input type="text" {...register("Username")}/>
    </div>
      <button type="submit"> Sign In </button>
     </form>
