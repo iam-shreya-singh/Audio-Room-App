@@ -1,3 +1,9 @@
 export const SignIn = () => {
-    return <div> SignIn </div>;
+    return 
+    <div className="sign-in"> 
+    {""}
+    <h1>
+    Welcome to Audio Room 
+    </h1>
+    </div>;
 };
