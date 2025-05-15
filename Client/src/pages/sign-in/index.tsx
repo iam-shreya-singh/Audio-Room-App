@@ -30,21 +30,21 @@ export const SignIn = () => {
     {" "}
     <h1> Welcome to AudioRoom Chats </h1>
     <form>
-   <div onSubmit={handleSubmit(onSubmit)}>
-    <label> username: </label>
-    <input type="text" {...register("username")} />
-    {errors.username && 
-    (<p style = {{color: "red" }}>(errors.username.message)</p>
-    )}
+      <div onSubmit={handleSubmit(onSubmit)}>
+      <label>Username: </label>
+      <input type="text" {...register("username")} />
+      {errors.username && 
+      (<p style = {{color: "red" }}>(errors.username.message)</p>
+      )}
+      </div>
+      <div>
+      <label>Name: </label>
+      <input type="text" {...register("name")}/>
+      {errors.name && 
+      (<p style = {{color: "red" }}>(errors.name.message)</p>
+      )}
    </div>
-   <div>
-    <label> Name: </label>
-    <input type="text" {...register("name")}/>
-    {errors.username && 
-    (<p style = {{color: "red" }}>(errors.name.message)</p>
-    )}
-   </div>
-     <button type="submit"> Sign-In </button>
+     <button type="submit">Sign-In</button>
     </form>
     </div>
     );
