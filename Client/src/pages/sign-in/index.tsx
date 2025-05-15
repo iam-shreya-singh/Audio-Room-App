@@ -28,23 +28,23 @@ export const SignIn = () => {
     return (
     <div className="sign-in"> 
     {" "}
-    <h1> Welcome to AudioRoom Chats ... Connect, Share, and Amplify Your Voice. </h1>
+    <h1> Welcome to AudioRoom Chats </h1>
     <form>
    <div onSubmit={handleSubmit(onSubmit)}>
     <label> username: </label>
     <input type="text" {...register("username")} />
     {errors.username && 
-    (<p style = {{color: "red" }} > errors.username.message </p>
+    (<p style = {{color: "red" }}>(errors.username.message)</p>
     )}
    </div>
    <div>
     <label> Name: </label>
-    <input type="text" {...register("username")} />
+    <input type="text" {...register("name")}/>
     {errors.username && 
-    (<p style = {{color: "red" }} > errors.name.message </p>
+    (<p style = {{color: "red" }}>(errors.name.message)</p>
     )}
    </div>
-     <button type="submit"> Sign In </button>
+     <button type="submit"> Sign-In </button>
     </form>
     </div>
     );
