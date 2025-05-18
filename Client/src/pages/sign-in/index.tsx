@@ -10,12 +10,14 @@ interface FormValues{
 export const SignIn = () => {
     // Define Yup validation schema
     const schema = yup.object().shape ({    
-      username: yup.string().required("username is required").matches(/^[a-zA-Z0-9_.@$]+$/, "Invalid username")
-       .required("Username is required"),
-    name: yup.string().required("Name is required"),
+      username: yup
+       .string()
+       .required("username is required")
+       .matches(/^[a-zA-Z0-9_.@$]+$/, "Invalid Username"),
+    name: yup.string().required("Name is Required"),
   });
 
-    const onSubmit : (SubmitHandler<FormValues>) = (data, event) => {
+    const onSubmit : SubmitHandler<FormValues> = (data, event) => {
       event?.preventDefault();
       const {username, name} = data;
       console.log(username, name);
