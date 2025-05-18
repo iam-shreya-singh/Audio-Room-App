@@ -12,8 +12,8 @@ export const SignIn = () => {
     const schema = yup.object().shape ({    
       username: yup
        .string()
-       .required("username is required")
-       .matches(/^[a-zA-Z0-9_.@$]+$/, "Invalid Username"),
+       .matches(/^[a-zA-Z0-9_.@$]+$/, "Invalid Username")
+       .required("Username is required"),
     name: yup.string().required("Name is Required"),
   });
 
