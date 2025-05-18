@@ -24,4 +24,5 @@ Simple components added to folders under pages - main, room, sign-in -- adding i
 
 **Flow of app creation:**
 1. Rendering pages like Sign in, room, Main Page (with files index.tsx in each) through app.tsx file
-2. 
+2. Initializing back-end
+3. 
