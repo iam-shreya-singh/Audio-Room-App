@@ -37,15 +37,15 @@ export const SignIn = () => {
       <div>
       <label>Username: </label>
       <input type="text" {...register("username")} />
-      {errors.username && 
-      (<p style = {{color: "red" }}>(errors.username.message)</p>
+      {errors.username && (
+        <p style = {{color: "red" }}>{errors.username.message}</p>
       )}
       </div>
       <div>
       <label>Name: </label>
       <input type="text" {...register("name")}/>
-      {errors.name && 
-      (<p style = {{color: "red" }}>(errors.name.message)</p>
+      {errors.name && (
+        <p style = {{color: "red" }}>{errors.name.message}</p>
       )}
    </div>
      <button type="submit">Sign-In</button>
