@@ -14,7 +14,8 @@ export const SignIn = () => {
       name: yup.string().required("Name is required"),
     });
 
-    const onSubmit : (SubmitHandler<FormValues>) = (data) => {
+    const onSubmit : (SubmitHandler<FormValues>) = (data, event) => {
+      event?.preventDefault();
       const {username, name} = data;
       console.log(username, name);
     }; 
@@ -29,8 +30,8 @@ export const SignIn = () => {
     <div className="sign-in"> 
     {" "}
     <h1> Welcome to AudioRoom Chats </h1>
-    <form>
-      <div onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
       <label>Username: </label>
       <input type="text" {...register("username")} />
       {errors.username && 
