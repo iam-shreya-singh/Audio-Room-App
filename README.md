@@ -12,8 +12,12 @@ The folders dividing project in it's frondtend and backend:
 
 **Commands to install the non-dev dependencies :**
 npm i @hookform/resolvers 
-
 yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
+
+**Backend configuration:**
+cd server  >> npm init -y (generates package.json)
+for typescript config : npx tsc --init
+
 
 **Imported libraries:**
 
