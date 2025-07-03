@@ -24,6 +24,7 @@
     "@hookform/resolvers": "^5.1.1",
     "@stream-io/video-react-sdk": "^1.18.8",
     "crypto-js": "^4.2.0",
+    "express": "^5.1.0",
     "react-router-dom": "^7.6.3",
     "universal-cookie": "^8.0.1",
     "yup": "^1.6.1"
