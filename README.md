@@ -18,6 +18,9 @@ yup @stream-io/video-react-sdk crypto-js universal-cookie react-router-dom
 cd server  >> npm init -y (generates package.json)
 for typescript config : npx tsc --init
 
+**Backend Initialization on @server**
+npm install --save-dev @types/cors @types/express @types/node nodemon ts-node typescript
+
 
 **Imported libraries:**
 
