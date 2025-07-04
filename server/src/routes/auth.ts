@@ -1,8 +1,8 @@
-import { Router, Request, Response } from 'express'
+import { Router, Request, Response } from "express";
 import { Client } from "../stream-Client";
+import { UserObjectRequest } from "@stream-io/node-sdk";
 
-
-const router = Router()
+const router = Router();
 
 router.post("/createUser", async (req: Request, res: Response) =>{
     const {username, name, image} = req.body;
@@ -10,19 +10,18 @@ router.post("/createUser", async (req: Request, res: Response) =>{
     if (!username || !name || !image) {
         return res.status(400).json({error: "All fields are required"});
     }
-
     const newUser: UserObjectReuest = {
         id: username,
+        role: "user",
+        name,
+        image,
         
     }
-    
-
         const user = await Client.upsertUser({
             users: {
-                [username]: newUser,
+            [newUser.id]: newUser,
             },
-        });     
-    }
-    // Here it typically saves the user to your database
+        });
 });
+
 export default router;
