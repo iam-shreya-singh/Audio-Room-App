@@ -17,7 +17,7 @@ router.post("/createUser", async (req: Request, res: Response) => {
         image,
         
     }
-        const user = await Client.upsertUser({
+        const user = await Client.upsertUsers({
             users: {
             [newUser.id]: newUser,
             },

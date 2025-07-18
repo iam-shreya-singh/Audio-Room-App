@@ -20,7 +20,7 @@ export const SignIn = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const { username, name } = data;
 
-    const response = await fetch("https://verbose-dollop-xv4pw9vx59j2pv7v-5173.app.github.dev", {
+    const response = await fetch("https://verbose-dollop-xv4pw9vx59j2pv7v-3001.app.github.dev/auth/createUser", {
        method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,6 +32,14 @@ export const SignIn = () => {
           PEOPLES_IMAGES[Math.floor(Math.random() * PEOPLES_IMAGES.length)],
       }),
     });
+
+    if (!response.ok) {
+      alert("Oops! Something went wrong while signing in. Please try again.");
+    };
+
+    const responseData = await response.json();
+    console.log("responseData", responseData);
+
     const {
       register, 
       handleSubmit,
