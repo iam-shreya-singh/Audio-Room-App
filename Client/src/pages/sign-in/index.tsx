@@ -17,12 +17,21 @@ export const SignIn = () => {
     name: yup.string().required("Name is Required"),
   });
 
-    const onSubmit : SubmitHandler<FormValues> = (data, event) => {
-      event?.preventDefault();
-      const {username, name} = data;
-      console.log(username, name);
-    }; 
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    const { username, name } = data;
 
+    const response = await fetch("https://verbose-dollop-xv4pw9vx59j2pv7v-5173.app.github.dev", {
+       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        name,
+        image:
+          PEOPLES_IMAGES[Math.floor(Math.random() * PEOPLES_IMAGES.length)],
+      }),
+    });
     const {
       register, 
       handleSubmit,
@@ -52,4 +61,4 @@ export const SignIn = () => {
     </form>
     </div>
     );
-};
+  }};
