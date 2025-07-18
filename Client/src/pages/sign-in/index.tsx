@@ -27,7 +27,7 @@ export const SignIn = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const { username, name } = data;
 
-    const response = await fetch("https://verbose-dollop-xv4pw9vx59j2pv7v-3001.app.github.dev/auth/createUser", {
+    const response = await fetch("https://verbose-dollop-xv4pw9vx59j2pv7v-5173.app.github.dev/auth/createUser", {
        method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const SignIn = () => {
     const responseData = await response.json();
     console.log("responseData", responseData);
   };
-  
+
     return (
     <div className="sign-in"> 
     {" "}
