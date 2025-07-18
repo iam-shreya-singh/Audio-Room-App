@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { PEOPLES_IMAGES } from "../../avatars";
+import { PEOPLES_IMAGES } from "../../images";
 
 interface FormValues{
   username: string;
