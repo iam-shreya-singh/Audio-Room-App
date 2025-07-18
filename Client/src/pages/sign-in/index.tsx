@@ -2,6 +2,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { PEOPLES_IMAGES } from "../../images";
+import Cookies from "universal-cookie";
+
 
 interface FormValues{
   username: string;
