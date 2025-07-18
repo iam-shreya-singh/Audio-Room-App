@@ -18,6 +18,12 @@ export const SignIn = () => {
     name: yup.string().required("Name is Required"),
   });
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({ resolver: yupResolver(schema)});
+
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     const { username, name } = data;
 
@@ -31,22 +37,18 @@ export const SignIn = () => {
         name,
         image:
           PEOPLES_IMAGES[Math.floor(Math.random() * PEOPLES_IMAGES.length)],
-      }),
-    });
+        }),
+      }
+   );
 
     if (!response.ok) {
       alert("Oops! Something went wrong while signing in. Please try again.");
-    };
+    }
 
     const responseData = await response.json();
     console.log("responseData", responseData);
-
-    const {
-      register, 
-      handleSubmit,
-      formState: { errors },
-    } = useForm<FormValues>({resolver: yupResolver(schema)} );
-
+  };
+  
     return (
     <div className="sign-in"> 
     {" "}
@@ -70,4 +72,4 @@ export const SignIn = () => {
     </form>
     </div>
     );
-  }};
+  };
