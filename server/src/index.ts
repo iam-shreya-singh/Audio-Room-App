@@ -16,7 +16,7 @@ app.use(cors(
 
 app.use("/auth", authRoutes);
 
-const PORT = process.env.PORT || 3001;
-app.listen (PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+const PORT = parseInt(process.env.PORT || "3001", 10);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Server is running on port ${PORT}`)
 });
