@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 //import { StreamVideoClient, User } from "@stream-io/video-react-sdk";
 import * as yup from "yup";
 import { PEOPLES_IMAGES } from "../../images";
-//import Cookies from "universal-cookie";
+import Cookies from "universal-cookie";
 
 
 interface FormValues{
@@ -12,6 +12,7 @@ interface FormValues{
 }
 
 export const SignIn = () => {
+    const cookies = new Cookies();
     // Define Yup validation schema
     const schema = yup.object().shape ({    
       username: yup
@@ -49,6 +50,19 @@ export const SignIn = () => {
 
     const responseData = await response.json();
     console.log("responseData", responseData);
+
+    const expires = new Date();
+    expires.setDate(expires.getDate() + 1); // Set cookie to expire in 1 day
+    cookies.set("token", responseData.token, {
+        expires,
+    });
+    cookies.set("username", responseData.username, {
+        expires,
+    });
+    cookies.set("name", responseData.name, {
+        expires,
+    });
+  
   };
 
     return (
